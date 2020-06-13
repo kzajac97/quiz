@@ -1,0 +1,19 @@
+question: Marcin Kiryczyński jest: 
+type: multiple
+answers: alkoholikiem, dobrym studentem, menelem, dziadem
+correct: alkoholikiem, menelem, dziadem
+
+question: Liczby większe niż 2:
+type: multiple
+answers: 1, 2, 3, 4
+correct: 2, 3
+
+question: druga litera alfabetu:
+type: single
+answers: a, c, d, b
+correct: b
+
+question: Najgorszym wydziałem na pwr jest ____
+type: fill
+answers: 
+correct: W4
