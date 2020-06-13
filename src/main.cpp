@@ -6,8 +6,6 @@
 
 int main(void)
 {   
-    read_questions_from_file(std::string("file_name"));
-    read_question(std::string("dict"));
-
-    std::cout << "Quiz\n";
+    auto content = read_content_from_file(std::string("data/sample.txt"));
+    auto questions = read_questions(content);
 }
