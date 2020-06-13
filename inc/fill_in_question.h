@@ -6,7 +6,7 @@
 
 #include "question.h"
 
-class FillInQuestion : private Question
+class FillInQuestion : public Question
 {
     public:
     FillInQuestion(std::string question_text, std::string correct_answer)

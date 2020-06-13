@@ -27,7 +27,7 @@ std::vector<std::string> read_content_from_file(std::string file_name)
 }
 
 
-int read_questions(std::vector<std::string> file_content)
+std::vector<std::shared_ptr<Question>> read_questions(std::vector<std::string> file_content)
 {
     std::vector<std::vector<std::string>> questions_content;
     std::vector<std::string> question_buffer;
@@ -46,13 +46,13 @@ int read_questions(std::vector<std::string> file_content)
 
     for(const auto content : questions_content)
     {
-        if(content[1] == "type: single")
-            { std::cout << "build single\n"; }
-        else if(content[1] == "type: multiple")
-            { std::cout << "build multiple\n"; }
-        else if(content[1] == "type: fill")
-            { std::cout << "build fill in\n"; }
+        //if(content[1] == "type: single")
+            // { questions.push_back(std::make_shared<Question>(SingleChoiceQuestion(content[0], content[2], content[3]))); }
+        //else if(content[1] == "type: multiple")
+            // { questions.push_back(std::make_shared<Question>(MultipleChoiceQuestion(content[0], content[2], content[3]))); }
+        if(content[1] == "type: fill")
+            { questions.push_back(std::make_shared<Question>(FillInQuestion(content[0], content[3]))); }
     }
 
-    return 0;
+    return questions;
 }

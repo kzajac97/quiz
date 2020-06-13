@@ -22,12 +22,14 @@ class Question
         : question_text(question_text), answers_text(answers_text), correct_answer(correct_answer) {}
     // overriden by fill in question
     Question(std::string question_text, std::string correct_answer)
-        : question_text(question_text), correct_answer(correct_answer) {} 
+        : question_text(question_text), correct_answer(correct_answer) {}
+    
+    public: // desctructor must be public to allow inheritance
     ~Question() {}
 
     public:
-    void ask();
-    virtual void check();
+    // void ask();
+    // virtual void check();
 };
 
 #endif //QUIZ_QUESTION_H

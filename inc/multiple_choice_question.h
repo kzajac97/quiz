@@ -6,7 +6,7 @@
 
 #include "question.h"
 
-class MultipleChoiceQuestion : Question
+class MultipleChoiceQuestion : public Question
 {
     private:
     std::vector<std::string> correct_answers;

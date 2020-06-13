@@ -6,7 +6,7 @@
 
 #include "question.h"
 
-class SingleChoiceQuestion : Question
+class SingleChoiceQuestion : public Question
 {
     public:
     SingleChoiceQuestion(std::string question_text, std::vector<std::string> answers_text, std::vector<std::string> correct_answer)
