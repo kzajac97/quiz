@@ -1,0 +1,4 @@
+#ifndef QUIZ_QUESTION_H
+#define QUIZ_QUESTION_H
+
+#endif //QUIZ_QUESTION_H
