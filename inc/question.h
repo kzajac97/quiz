@@ -12,10 +12,21 @@ class Question
     // field holding possible question answers
     std::vector<std::string> answers_text;
     // field holding correct answer to question
-    std::string corret_answer;
+    std::string correct_answer;
+
+    protected:
+    // default
+    Question () {}
+    // overriden by single choice question
+    Question(std::string question_text, std::vector<std::string> answers_text, std::string correct_answer)
+        : question_text(question_text), answers_text(answers_text), correct_answer(correct_answer) {}
+    // overriden by fill in question
+    Question(std::string question_text, std::string correct_answer)
+        : question_text(question_text), correct_answer(correct_answer) {} 
+    ~Question() {}
 
     public:
-    virtual void ask();
+    void ask();
     virtual void check();
 };
 

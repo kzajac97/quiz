@@ -1,9 +1,13 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <memory>
 
 #include "reader.h"
 #include "question.h"
+#include "single_choice_question.h"
+#include "multiple_choice_question.h"
+#include "fill_in_question.h"
 
 
 std::vector<std::string> read_content_from_file(std::string file_name)
@@ -27,7 +31,7 @@ int read_questions(std::vector<std::string> file_content)
 {
     std::vector<std::vector<std::string>> questions_content;
     std::vector<std::string> question_buffer;
-    std::vector<Question> questions;
+    std::vector<std::shared_ptr<Question>> questions;
 
     for(unsigned int iterator = 0; iterator < file_content.size(); ++iterator)
     {
@@ -39,15 +43,6 @@ int read_questions(std::vector<std::string> file_content)
             question_buffer.clear();
         }
     }
-
-    // std::cout << "reading:\n";
-    // for(auto it : questions_content)
-    // {
-    //     std::cout << "Question\n";
-    //     for (auto jt : it)
-    //         { std::cout << jt << "\n"; }
-    //     std::cout << "\n";
-    // }
 
     for(const auto content : questions_content)
     {

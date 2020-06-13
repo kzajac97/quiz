@@ -1,4 +1,4 @@
-CXXFLAGS=-g -Iinc -Wall -pedantic -std=c++17
+CXXFLAGS=-g -Iinc -Wall -Wextra -pedantic -std=c++17
 
 bin/quiz.out: bin/main.o bin/question.o bin/reader.o
 	g++ ${CXXFLAGS} -o bin/quiz.out bin/main.o bin/question.o bin/reader.o
