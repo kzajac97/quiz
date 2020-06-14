@@ -7,5 +7,5 @@
 
 void FillInQuestion::ask(void)
 {
-    std::cout << question_text << "\n";
+    std::cout << question_text << "\n\n";
 }
