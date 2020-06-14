@@ -110,7 +110,7 @@ std::vector<std::unique_ptr<Question>> read_questions(std::vector<std::string> f
         {
             // get question and answer without tags from raw string
             auto question_content = content[QUESTION_INDICATOR_INDEX].substr(QUESTION_SUB_STR_SIZE);
-            auto correct_content = content[CORRECT_INDICATOR_INDEX].substr(CORRECT_SUB_STR_SIZE);
+            auto correct_content = content[CORRECT_INDICATOR_INDEX].substr(CORRECT_SUB_STR_SIZE + 1);
 
             std::unique_ptr<Question> placeholder(new FillInQuestion(question_content, correct_content));
             questions.push_back(std::move(placeholder));

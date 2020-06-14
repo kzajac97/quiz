@@ -16,5 +16,5 @@ correct: b
 #
 question: Najgorszym wydziałem na pwr jest ____
 type: fill
-answers: 
+answers:
 correct: W4

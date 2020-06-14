@@ -1,6 +1,6 @@
-#include <cctype>
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <vector>
 
 #include "multiple_choice_question.h"
@@ -8,25 +8,36 @@
 
 const std::string MultipleChoiceQuestion::ask(void)
 {
-    unsigned int user_answer; 
-    std::cout << this->question_text << "\n";
+    std::string user_answer;
+    std::cout << "Chose multiple answers:\n" << this->question_text << "\n";
 
     for(unsigned int iter=0; iter < this->answers_text.size(); ++iter)
         { std::cout << iter + 1 << "." << this->answers_text[iter] << "\n"; }
     std::cout << "\n";
     
     std::cin >> user_answer;
-    if(user_answer <= 4 && user_answer >= 1)  
-        { return this->answers_text[user_answer - 1]; }  // move one back, because of 0 indexing
-    else
-    {
-        std::cout << "Error! You have to chose number in range [1, 4]\n";
-        return std::string(" ");
-    }
+
+    return user_answer;
 }
 
 
 unsigned int MultipleChoiceQuestion::check(std::string user_answer)
 {
-    return user_answer == this->correct_answer;
+    std::stringstream ss(user_answer);
+    std::vector<unsigned int> result;
+
+    while(ss.good())
+    {
+        std::string substr;
+        std::getline(ss, substr, ',');
+        result.push_back(std::stoi(substr));
+    }
+
+    for(unsigned int index=0; index < result.size(); ++index)
+    {
+        if(this->answers_text[result[index]] != this->correct_answers[index])
+            { return 0; }
+    }
+    
+    return 1;
 }

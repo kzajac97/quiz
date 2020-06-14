@@ -28,7 +28,7 @@ class Question
     virtual ~Question() {}
 
     const virtual std::string ask() = 0;  // pure virtual
-    // virtual void check();
+    virtual unsigned int check(std::string user_answer) = 0;
 };
 
 #endif //QUIZ_QUESTION_H

@@ -11,12 +11,17 @@
 
 int main(void)
 {   
+    unsigned int score = 0;
     auto content = read_content_from_file(std::string("data/sample.txt"));
     auto questions = read_questions(content);
 
     for(const auto & it : questions)
     {
         auto answer = it->ask();
-        std::cout << answer << "\n";  
+        score += it->check(answer);
+        std::cout << answer << "\n";
+        if(it->check(answer) == 1) { std::cout << "Correct!\n"; }  
     }
+
+    std::cout << "Your score is: " << score << "\n";
 }

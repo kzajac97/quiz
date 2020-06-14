@@ -15,6 +15,6 @@ const unsigned int CORRECT_INDICATOR_INDEX = 3;
 const unsigned int QUESTION_SUB_STR_SIZE = 10;
 const unsigned int TYPE_SUB_STR_SIZE = 6;
 const unsigned int ANSWER_SUB_STR_SIZE = 8;
-const unsigned int CORRECT_SUB_STR_SIZE = 9;
+const unsigned int CORRECT_SUB_STR_SIZE = 8;
 
 #endif //QUIZ_RETURN_CODES_H

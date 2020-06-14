@@ -8,7 +8,7 @@
 const std::string SingleChoiceQuestion::ask(void)
 {
     unsigned int user_answer; 
-    std::cout << question_text << "\n";
+    std::cout << "Choosen one answer:\n" << question_text << "\n";
 
     for(unsigned int iter=0; iter < this->answers_text.size(); ++iter)
         { std::cout << iter + 1 << "." << this->answers_text[iter] << "\n"; }
