@@ -1,3 +1,4 @@
+#include <cctype>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -15,5 +16,11 @@ const std::string SingleChoiceQuestion::ask(void)
     std::cout << "\n";
 
     std::cin >> user_answer;
-    return this->answers_text[user_answer];
+    if(user_answer <= 4 && user_answer >= 1)
+        { return this->answers_text[user_answer - 1]; }
+    else
+    {
+        std::cout << "Error! You have to chose number in range [1, 4]\n";
+        return std::string(" ");
+    }
 }
