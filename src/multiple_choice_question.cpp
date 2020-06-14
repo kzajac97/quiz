@@ -24,3 +24,9 @@ const std::string MultipleChoiceQuestion::ask(void)
         return std::string(" ");
     }
 }
+
+
+unsigned int MultipleChoiceQuestion::check(std::string user_answer)
+{
+    return user_answer == this->correct_answer;
+}

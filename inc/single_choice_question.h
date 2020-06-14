@@ -18,6 +18,7 @@ class SingleChoiceQuestion : public Question
     
     ~SingleChoiceQuestion() {};
     const std::string ask(void);
+    unsigned int check(std::string user_answer);   
 };
 
 #endif //QUIZ_SINGLE_CHOICE_QUESTION_H

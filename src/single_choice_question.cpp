@@ -1,4 +1,3 @@
-#include <cctype>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -23,4 +22,10 @@ const std::string SingleChoiceQuestion::ask(void)
         std::cout << "Error! You have to chose number in range [1, 4]\n";
         return std::string(" ");
     }
+}
+
+
+unsigned int SingleChoiceQuestion::check(std::string user_answer)
+{
+    return user_answer == this->correct_answer;
 }

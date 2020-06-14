@@ -16,6 +16,7 @@ int main(void)
 
     for(const auto & it : questions)
     {
-        it->ask();
+        auto answer = it->ask();
+        std::cout << answer << "\n";  
     }
 }

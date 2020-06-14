@@ -21,6 +21,7 @@ class MultipleChoiceQuestion : public Question
     ~MultipleChoiceQuestion() {};
 
     const std::string ask(void);
+    unsigned int check(std::string user_answer);
 };
 
 #endif //QUIZ_MULTIPLE_CHOICE_QUESTION_H
