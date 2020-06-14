@@ -27,7 +27,7 @@ class Question
     public: // desctructor must be public to allow inheritance
     virtual ~Question() {}
 
-    virtual void ask() {std::cout << "Base\n"; };
+    const virtual std::string ask() = 0;  // pure virtual
     // virtual void check();
 };
 

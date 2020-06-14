@@ -17,7 +17,7 @@ class SingleChoiceQuestion : public Question
     }
     
     ~SingleChoiceQuestion() {};
-    void ask(void);
+    const std::string ask(void);
 };
 
 #endif //QUIZ_SINGLE_CHOICE_QUESTION_H

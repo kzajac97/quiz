@@ -20,7 +20,7 @@ class MultipleChoiceQuestion : public Question
     
     ~MultipleChoiceQuestion() {};
 
-    void ask(void);
+    const std::string ask(void);
 };
 
 #endif //QUIZ_MULTIPLE_CHOICE_QUESTION_H

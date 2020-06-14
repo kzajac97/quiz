@@ -5,7 +5,12 @@
 #include "fill_in_question.h"
 
 
-void FillInQuestion::ask(void)
+const std::string FillInQuestion::ask(void)
 {
+    std::string user_answer;
+
     std::cout << question_text << "\n\n";
+    std::cin >> user_answer;
+
+    return user_answer;
 }

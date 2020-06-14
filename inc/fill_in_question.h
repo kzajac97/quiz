@@ -17,7 +17,7 @@ class FillInQuestion : public Question
     
     ~FillInQuestion() {};
 
-    void ask(void);
+    const std::string ask(void);
 };
 
 #endif //QUIZ_FILL_IN_QUESTION_H
