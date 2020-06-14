@@ -6,7 +6,7 @@
 
 class Question
 {
-    private:
+    public:
     // field for string hodling question content
     std::string question_text;
     // field holding possible question answers
@@ -25,10 +25,9 @@ class Question
         : question_text(question_text), correct_answer(correct_answer) {}
     
     public: // desctructor must be public to allow inheritance
-    ~Question() {}
+    virtual ~Question() {}
 
-    public:
-    // void ask();
+    virtual void ask() {std::cout << "Base\n"; };
     // virtual void check();
 };
 

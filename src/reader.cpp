@@ -68,11 +68,11 @@ std::vector<std::string> read_content_from_file(std::string file_name)
  *  
  * @return vector of Questions
  */ 
-std::vector<std::shared_ptr<Question>> read_questions(std::vector<std::string> file_content)
+std::vector<std::unique_ptr<Question>> read_questions(std::vector<std::string> file_content)
 {
     std::vector<std::vector<std::string>> questions_content;
     std::vector<std::string> question_buffer;
-    std::vector<std::shared_ptr<Question>> questions;
+    std::vector<std::unique_ptr<Question>> questions;
 
     for(unsigned int iterator = 0; iterator < file_content.size(); ++iterator)
     {
@@ -93,7 +93,8 @@ std::vector<std::shared_ptr<Question>> read_questions(std::vector<std::string> f
             auto answers_content = split_string(content[ANSWER_INDICATOR_INDEX].substr(ANSWER_SUB_STR_SIZE), ',');
             auto correct_content = content[CORRECT_INDICATOR_INDEX].substr(CORRECT_SUB_STR_SIZE);
 
-            questions.push_back(std::make_shared<Question>(SingleChoiceQuestion(question_content, answers_content, correct_content)));
+            std::unique_ptr<Question> placeholder(new SingleChoiceQuestion(question_content, answers_content, correct_content));
+            questions.push_back(std::move(placeholder));
         }
         else if(content[TYPE_INDICATOR_INDEX].substr(TYPE_SUB_STR_SIZE) == "multiple")
         {
@@ -101,7 +102,8 @@ std::vector<std::shared_ptr<Question>> read_questions(std::vector<std::string> f
             auto answers_content = split_string(content[ANSWER_INDICATOR_INDEX].substr(ANSWER_SUB_STR_SIZE), ',');
             auto correct_content = split_string(content[CORRECT_INDICATOR_INDEX].substr(CORRECT_SUB_STR_SIZE), ',');
 
-            questions.push_back(std::make_shared<Question>(MultipleChoiceQuestion(question_content, answers_content, correct_content)));
+            std::unique_ptr<Question> placeholder(new MultipleChoiceQuestion(question_content, answers_content, correct_content));
+            questions.push_back(std::move(placeholder));
         }
 
         else if(content[TYPE_INDICATOR_INDEX].substr(TYPE_SUB_STR_SIZE) == "fill")
@@ -110,7 +112,8 @@ std::vector<std::shared_ptr<Question>> read_questions(std::vector<std::string> f
             auto question_content = content[QUESTION_INDICATOR_INDEX].substr(QUESTION_SUB_STR_SIZE);
             auto correct_content = content[CORRECT_INDICATOR_INDEX].substr(CORRECT_SUB_STR_SIZE);
 
-            questions.push_back(std::make_shared<Question>(FillInQuestion(question_content, correct_content)));
+            std::unique_ptr<Question> placeholder(new FillInQuestion(question_content, correct_content));
+            questions.push_back(std::move(placeholder));
         }
     }
 
