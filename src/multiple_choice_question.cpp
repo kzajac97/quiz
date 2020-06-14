@@ -35,7 +35,7 @@ unsigned int MultipleChoiceQuestion::check(std::string user_answer)
 
     for(unsigned int index=0; index < result.size(); ++index)
     {
-        if(this->answers_text[result[index]] != this->correct_answers[index])
+        if(this->answers_text[result[index] - 1] != this->correct_answers[index])
             { return 0; }
     }
     

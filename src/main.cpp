@@ -19,8 +19,8 @@ int main(void)
     {
         auto answer = it->ask();
         score += it->check(answer);
-        std::cout << answer << "\n";
-        if(it->check(answer) == 1) { std::cout << "Correct!\n"; }  
+        if(it->check(answer) == 1)
+            { std::cout << "Correct!\n"; }  
     }
 
     std::cout << "Your score is: " << score << "\n";
