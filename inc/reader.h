@@ -7,6 +7,7 @@
 
 #include "question.h"
 
+std::vector<std::string> split_string(std::string content, char delimiter);
 std::vector<std::string> read_content_from_file(std::string file_name);
 std::vector<std::shared_ptr<Question>> read_questions(std::vector<std::string> file_content);
 

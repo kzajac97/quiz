@@ -9,7 +9,7 @@
 class SingleChoiceQuestion : public Question
 {
     public:
-    SingleChoiceQuestion(std::string question_text, std::vector<std::string> answers_text, std::vector<std::string> correct_answer)
+    SingleChoiceQuestion(std::string question_text, std::vector<std::string> answers_text, std::string correct_answer)
     {
         question_text = question_text;
         answers_text = answers_text;
