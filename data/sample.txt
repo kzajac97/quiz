@@ -7,7 +7,7 @@ correct: alkoholikiem, menelem, dziadem
 question: Liczby większe niż 2:
 type: multiple
 answers: 1, 2, 3, 4
-correct: 2, 3
+correct: 3, 4
 #
 question: druga litera alfabetu:
 type: single
@@ -16,5 +16,5 @@ correct: b
 #
 question: Najgorszym wydziałem na pwr jest ____
 type: fill
-answers: 
+answers:
 correct: W4

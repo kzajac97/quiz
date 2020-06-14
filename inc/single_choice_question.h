@@ -11,12 +11,14 @@ class SingleChoiceQuestion : public Question
     public:
     SingleChoiceQuestion(std::string question_text, std::vector<std::string> answers_text, std::string correct_answer)
     {
-        question_text = question_text;
-        answers_text = answers_text;
-        correct_answer = correct_answer;
+        this->question_text = question_text;
+        this->answers_text = answers_text;
+        this->correct_answer = correct_answer;
     }
     
     ~SingleChoiceQuestion() {};
+    const std::string ask(void);
+    unsigned int check(std::string user_answer);   
 };
 
 #endif //QUIZ_SINGLE_CHOICE_QUESTION_H
